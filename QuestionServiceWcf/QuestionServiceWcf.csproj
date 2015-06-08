@@ -75,7 +75,6 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="QuestionRepository.cs" />
     <Compile Include="QuestionService.svc.cs">
       <DependentUpon>QuestionService.svc</DependentUpon>
     </Compile>

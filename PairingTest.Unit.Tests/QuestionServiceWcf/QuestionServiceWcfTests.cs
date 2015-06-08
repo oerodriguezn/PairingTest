@@ -30,7 +30,6 @@ namespace PairingTest.Unit.Tests.QuestionServiceWcf
         {
             //Arrange
             var fakeQuestionRepository = new FakeQuestionRepository();
-            fakeQuestionRepository.ExpectedQuestions = new Questionnaire { Title = "My expected questions" };
             var questionService = new QuestionService(fakeQuestionRepository);
 
             //Act
@@ -44,7 +43,7 @@ namespace PairingTest.Unit.Tests.QuestionServiceWcf
         public void ValidateQuestionsAnswer()
         {
             //Arrange
-            var fakeQuestionRepository = new QuestionRepository();
+            var fakeQuestionRepository = new FakeQuestionRepository();
 
             var questionService = new QuestionService(fakeQuestionRepository);
             //Act

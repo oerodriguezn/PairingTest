@@ -34,8 +34,10 @@ namespace PairingTest.Web.Controllers
             {
                 user.Name = this.User.Identity.Name;
                 if (user.Name.Length == 0)
-                    user.Name = (Request.UserHostAddress == "::1"?"127.0.0.1": Request.UserHostAddress)+ ";" + DateTime.Now.ToString("yyMMddHHmmss");
+                    user.Name = ClientIP() + ";" + DateTime.Now.ToString("yyMMddHHmmss");
             }
+            else
+                user.Name = ClientIP() + ";" + DateTime.Now.ToString("yyMMddHHmmss");
            
             WCFproxy<IQuestionService>.Use(client =>
             {
@@ -43,6 +45,14 @@ namespace PairingTest.Web.Controllers
             });
             ViewBag.EditMode = false;
             return View(questionnaire);
+        }
+
+        private string ClientIP()
+        {
+            if (Request!=null)
+            return (Request.UserHostAddress == "::1" ? "127.0.0.1" : Request.UserHostAddress);
+            else
+                return "127.0.0.1";
         }
     }
 }
