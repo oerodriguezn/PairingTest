@@ -10,14 +10,8 @@ namespace QuestionnaireLibrary
     [DataContract]
     public class Questionnaire
     {
-        [DataMember]
         public int Id { get; set; }
-        [DataMember]
-     
-
-        [StringLength(50)]
         public string Title { get; set; }
-        [DataMember]
         public List<Question> Questions { get; set; }
     }
 
