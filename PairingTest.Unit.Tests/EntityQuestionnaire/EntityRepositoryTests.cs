@@ -30,7 +30,7 @@ namespace PairingTest.Unit.Tests.EntityRepository
         {
             //Arrange
             var QuestionRepository = new QuestionnaireDataAccess.EntityQuestionRepository();
-            var questionService = new QuestionService(QuestionRepository);
+           // var questionService = new QuestionService(QuestionRepository);
 
             //Act
             var questions = questionService.GetQuestionaire();
